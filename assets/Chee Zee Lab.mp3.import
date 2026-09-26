@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cu7h2pbw6isbp"
+path="res://.godot/imported/Chee Zee Lab.mp3-c7c24b176e5ab147db4d059dee7e3957.mp3str"
+
+[deps]
+
+source_file="res://assets/Chee Zee Lab.mp3"
+dest_files=["res://.godot/imported/Chee Zee Lab.mp3-c7c24b176e5ab147db4d059dee7e3957.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

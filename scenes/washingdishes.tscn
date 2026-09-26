@@ -1,0 +1,471 @@
+[gd_scene format=3 uid="uid://dprytrg74rjyw"]
+
+[ext_resource type="Script" uid="uid://5ogj77aa4xyi" path="res://scripts/washingdishes.gd" id="1_tpw4q"]
+[ext_resource type="PackedScene" uid="uid://c6ngki4famskg" path="res://scenes/floor.tscn" id="4_irys8"]
+[ext_resource type="PackedScene" uid="uid://jy4oolsavldd" path="res://scenes/wall.tscn" id="5_emffb"]
+[ext_resource type="PackedScene" uid="uid://pn07ov63yyk7" path="res://scenes/plate.tscn" id="6_uu6mm"]
+[ext_resource type="AudioStream" uid="uid://c71ned16o401f" path="res://assets/waterdripping.wav" id="7_j6ma0"]
+[ext_resource type="PackedScene" uid="uid://6i7f5lm5653j" path="res://scenes/counter.tscn" id="8_k2t6p"]
+[ext_resource type="PackedScene" uid="uid://f7vhjllhiwtq" path="res://scenes/sink.tscn" id="9_np646"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3e0k0"]
+size = Vector3(0.5578613, 0.0647583, 0.1508789)
+
+[sub_resource type="Animation" id="Animation_uu6mm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("plates/plate5:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6.896, 2.442, -2.8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("plates/plate4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6.896, 2.3639092, -2.8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("plates/plate3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6.896, 2.284069, -2.8)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("plates/plate2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6.896, 2.20584, -2.8)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("plates/plate:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6.896, 2.126, -2.8)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("plates/plate10:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6.896, 2.4421344, -2)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("plates/plate9:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6.896, 2.3639092, -2)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("plates/plate8:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6.896, 2.284069, -2)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("plates/plate7:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6.896, 2.20584, -2)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("plates/plate6:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6.896, 2.126, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_j6ma0"]
+resource_name = "wash"
+length = 120.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("plates/plate5:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 10.5, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(6.896, 2.442, -2.8), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.126, -5.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("plates/plate4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(12, 12.5, 22.5, 24),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(6.896, 2.3639092, -2.8), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.206, -5.4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("plates/plate3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(24, 24.75, 34.75, 36),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(6.896, 2.284069, -2.8), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.286, -5.4)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("plates/plate2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(36, 36.75, 46.75, 48),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(6.896, 2.20584, -2.8), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.366, -5.4)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("plates/plate:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(48, 49, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(6.896, 2.126, -2.8), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.446, -5.4)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("plates/plate10:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(60.03274, 60.5, 70.4, 72),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(6.896, 2.4421344, -2), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.126, -4.6)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("plates/plate9:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(72, 72.5, 82.5, 84),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(6.896, 2.3639092, -2), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.206, -4.6)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("plates/plate8:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(84, 84.75, 94.75, 96),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(6.896, 2.284069, -2), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.286, -4.6)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("plates/plate7:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(96, 97, 106.86667, 108),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(6.896, 2.20584, -2), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.366, -4.6)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("plates/plate6:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(108, 109.5, 119.5, 120),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(6.896, 2.126, -2), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.442, -3.725), Vector3(6.896, 2.446, -4.6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fqwtr"]
+_data = {
+&"RESET": SubResource("Animation_uu6mm"),
+&"wash": SubResource("Animation_j6ma0")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ixj5f"]
+emission_shape = 1
+emission_sphere_radius = 0.13
+use_rotation_3d = true
+rotation_3d_min = Vector3(-50, 0, -50)
+rotation_3d_max = Vector3(50, 0, -50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6ma0"]
+albedo_color = Color(0, 0.10980392, 0.85490197, 0.89411765)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uu6mm"]
+material = SubResource("StandardMaterial3D_j6ma0")
+size = Vector3(0.06, 0.06, 0.06)
+
+[sub_resource type="Skin" id="Skin_uu6mm"]
+
+[node name="plates" type="Node3D" unique_id=1646466741]
+script = ExtResource("1_tpw4q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1994633865]
+layer = 3
+
+[node name="timeLeft" type="VBoxContainer" parent="CanvasLayer" unique_id=789074804]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="timeLabel" type="Label" parent="CanvasLayer/timeLeft" unique_id=1243215903]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+
+[node name="house" type="Node3D" parent="." unique_id=875525488]
+metadata/_edit_lock_ = true
+
+[node name="floor" parent="house" unique_id=1958611099 instance=ExtResource("4_irys8")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 1, 0)
+
+[node name="wall" parent="house" unique_id=967120767 instance=ExtResource("5_emffb")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 5, 7.5, 1, 0)
+
+[node name="wall2" parent="house" unique_id=449825502 instance=ExtResource("5_emffb")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 5, -7.5, 1, 0)
+
+[node name="wall3" parent="house" unique_id=1499828723 instance=ExtResource("5_emffb")]
+transform = Transform3D(-4.371139e-08, 0, 5, 0, 1.5, 0, -1, 0, -2.1855695e-07, 0, 1, 7.5)
+
+[node name="wall4" parent="house" unique_id=420771037 instance=ExtResource("5_emffb")]
+transform = Transform3D(-4.371139e-08, 0, 5, 0, 1.5, 0, -1, 0, -2.1855695e-07, 0, 1, -7.5)
+
+[node name="floor2" parent="house" unique_id=347825424 instance=ExtResource("4_irys8")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 5.376, 0)
+
+[node name="wall5" parent="house" unique_id=1526162981 instance=ExtResource("5_emffb")]
+transform = Transform3D(-4.371139e-08, 0, 2.5, 0, 1.5, 0, -1, 0, -1.09278474e-07, 3.75, 1, 0)
+
+[node name="lights" type="Node3D" parent="." unique_id=1307331588]
+metadata/_edit_lock_ = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lights" unique_id=1047009927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.25, -4)
+light_energy = 4.0
+omni_range = 4096.0
+metadata/_edit_lock_ = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="lights" unique_id=432148515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.25, 4)
+light_energy = 4.0
+omni_range = 4096.0
+metadata/_edit_lock_ = true
+
+[node name="someFurniture" type="Node3D" parent="." unique_id=1739029356]
+metadata/_edit_lock_ = true
+
+[node name="counters" type="Node3D" parent="someFurniture" unique_id=311840605]
+
+[node name="Counter" parent="someFurniture/counters" unique_id=2097652705 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.924947, 1.126, -0.565)
+
+[node name="Counter2" parent="someFurniture/counters" unique_id=186457528 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.933, 1.126, -0.565)
+
+[node name="Counter3" parent="someFurniture/counters" unique_id=1989684592 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.933, 1.126, -0.565)
+
+[node name="Counter4" parent="someFurniture/counters" unique_id=1989434939 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.933, 1.126, -0.565)
+
+[node name="Counter5" parent="someFurniture/counters" unique_id=134634018 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.933, 1.126, -0.565)
+
+[node name="Counter6" parent="someFurniture/counters" unique_id=1934894900 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.933, 1.126, -0.565)
+
+[node name="counters2" type="Node3D" parent="someFurniture" unique_id=195546432]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.860618, 0, -7.5030155)
+
+[node name="Counter" parent="someFurniture/counters2" unique_id=1516039706 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.924947, 1.126, -0.565)
+
+[node name="Counter2" parent="someFurniture/counters2" unique_id=732862054 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.933, 1.126, -0.565)
+
+[node name="Counter3" parent="someFurniture/counters2" unique_id=790028704 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.933, 1.126, -0.565)
+
+[node name="Counter4" parent="someFurniture/counters2" unique_id=45493805 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.933, 1.126, -0.565)
+
+[node name="Counter5" parent="someFurniture/counters2" unique_id=2087709684 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.933, 1.126, -0.565)
+
+[node name="Counter6" parent="someFurniture/counters2" unique_id=1646129302 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.933, 1.126, -0.565)
+
+[node name="counters3" type="Node3D" parent="someFurniture" unique_id=516035162]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.492, 0, 0.21)
+
+[node name="Counter2" parent="someFurniture/counters3" unique_id=626512005 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.933, 1.126, -0.565)
+
+[node name="Counter3" parent="someFurniture/counters3" unique_id=96515800 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.933, 1.126, -0.565)
+
+[node name="Counter5" parent="someFurniture/counters3" unique_id=1700785902 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.933, 1.126, -0.565)
+
+[node name="Counter6" parent="someFurniture/counters3" unique_id=121150998 instance=ExtResource("8_k2t6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.933, 1.126, -0.565)
+
+[node name="Counter" parent="someFurniture/counters3" unique_id=713242380 instance=ExtResource("9_np646")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.933, 1.126, -0.565)
+
+[node name="plates" type="Node3D" parent="." unique_id=1984094080]
+metadata/_edit_lock_ = true
+
+[node name="plate" parent="plates" unique_id=1410374172 instance=ExtResource("6_uu6mm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.896, 2.126, -2.8)
+
+[node name="plate2" parent="plates" unique_id=1122745153 instance=ExtResource("6_uu6mm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.896, 2.20584, -2.8)
+
+[node name="plate3" parent="plates" unique_id=2110092910 instance=ExtResource("6_uu6mm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.896, 2.284069, -2.8)
+
+[node name="plate4" parent="plates" unique_id=1967579670 instance=ExtResource("6_uu6mm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.896, 2.3639092, -2.8)
+
+[node name="plate5" parent="plates" unique_id=1691780178 instance=ExtResource("6_uu6mm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.896, 2.442, -2.8)
+
+[node name="plate6" parent="plates" unique_id=840564795 instance=ExtResource("6_uu6mm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.896, 2.126, -2)
+
+[node name="plate7" parent="plates" unique_id=670758666 instance=ExtResource("6_uu6mm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.896, 2.20584, -2)
+
+[node name="plate8" parent="plates" unique_id=987963010 instance=ExtResource("6_uu6mm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.896, 2.284069, -2)
+
+[node name="plate10" parent="plates" unique_id=1776134816 instance=ExtResource("6_uu6mm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.896, 2.4421344, -2)
+
+[node name="plate9" parent="plates" unique_id=684318744 instance=ExtResource("6_uu6mm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.896, 2.3639092, -2)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1827858667]
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 7, 4.4905972, -3.7)
+fov = 60.0
+
+[node name="insink" type="Area3D" parent="." unique_id=373305563]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="insink" unique_id=407799928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.918583, 2.5409236, -4.003955)
+shape = SubResource("BoxShape3D_3e0k0")
+debug_color = Color(0.6999526, 0.49038172, 0.12661901, 0.41960785)
+
+[node name="animationPlate5" type="AnimationPlayer" parent="." unique_id=1781905509]
+libraries/ = SubResource("AnimationLibrary_fqwtr")
+
+[node name="Timer" type="Timer" parent="." unique_id=1919900529]
+wait_time = 122.0
+one_shot = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=655312673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1568947, 2.6684678, -3.725)
+transparency = 0.25
+amount = 25
+lifetime = 0.6
+process_material = SubResource("ParticleProcessMaterial_ixj5f")
+draw_pass_1 = SubResource("BoxMesh_uu6mm")
+draw_skin = SubResource("Skin_uu6mm")
+
+[node name="water" type="AudioStreamPlayer3D" parent="." unique_id=1325729409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.169, 2.668, -3.725)
+stream = ExtResource("7_j6ma0")
+
+[node name="watertimer" type="Timer" parent="." unique_id=556987311]
+wait_time = 0.15
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="watertimer" to="." method="_on_watertimer_timeout"]

@@ -1,0 +1,309 @@
+[gd_scene format=3 uid="uid://tmtrxa1baxv6"]
+
+[ext_resource type="Script" uid="uid://bxictjvn8wfq1" path="res://scripts/diningroom_cutscene.gd" id="1_cwrfu"]
+[ext_resource type="PackedScene" uid="uid://c6ngki4famskg" path="res://scenes/floor.tscn" id="1_t5f1w"]
+[ext_resource type="PackedScene" uid="uid://jy4oolsavldd" path="res://scenes/wall.tscn" id="2_cwrfu"]
+[ext_resource type="PackedScene" uid="uid://6i7f5lm5653j" path="res://scenes/counter.tscn" id="3_b1510"]
+[ext_resource type="PackedScene" uid="uid://f7vhjllhiwtq" path="res://scenes/sink.tscn" id="4_stnlf"]
+[ext_resource type="PackedScene" uid="uid://bsswld7svuxc8" path="res://scenes/tv.tscn" id="5_m6mrf"]
+[ext_resource type="PackedScene" uid="uid://p5340cxtxk1g" path="res://scenes/couch.tscn" id="6_p6fjh"]
+[ext_resource type="PackedScene" uid="uid://b8dtubgwg7xnm" path="res://scenes/chair.tscn" id="7_lweks"]
+[ext_resource type="PackedScene" uid="uid://dwug8senahtnf" path="res://scenes/livingroom_table.tscn" id="8_6ha2k"]
+[ext_resource type="Texture2D" uid="uid://c35wskqtlaa62" path="res://assets/tabledirt.png" id="9_cj4jb"]
+[ext_resource type="PackedScene" uid="uid://ds3dcebliv5m1" path="res://scenes/diningroom_table.tscn" id="10_dosby"]
+[ext_resource type="Texture2D" uid="uid://c7u68gx5aacmk" path="res://assets/duster.png" id="12_b1510"]
+[ext_resource type="AudioStream" uid="uid://d3oj0j33gldws" path="res://assets/dusting.wav" id="13_stnlf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28kja"]
+atlas = ExtResource("12_b1510")
+region = Rect2(0, 0, 556, 556)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0dox"]
+atlas = ExtResource("12_b1510")
+region = Rect2(556, 0, 556, 556)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dgqv"]
+atlas = ExtResource("12_b1510")
+region = Rect2(1112, 0, 556, 556)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cauhv"]
+atlas = ExtResource("12_b1510")
+region = Rect2(556, 0, 556, 556)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22d7e"]
+atlas = ExtResource("12_b1510")
+region = Rect2(556, 0, 556, 556)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_stnlf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28kja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0dox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dgqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cauhv")
+}],
+"loop": 1,
+"name": &"dusting",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22d7e")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 0.0
+}]
+
+[node name="diningroomcutscene" type="Node3D" unique_id=1646466741]
+script = ExtResource("1_cwrfu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1994633865]
+layer = 3
+
+[node name="timeLeft" type="VBoxContainer" parent="CanvasLayer" unique_id=789074804]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="timeLabel" type="Label" parent="CanvasLayer/timeLeft" unique_id=1243215903]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+
+[node name="Guide" type="VBoxContainer" parent="CanvasLayer" unique_id=1701560582]
+offset_left = 138.0
+offset_top = 980.0
+offset_right = 1782.0
+offset_bottom = 1049.0
+
+[node name="guide" type="Label" parent="CanvasLayer/Guide" unique_id=1204589803]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Hold the interact button and move your mouse around on the table."
+
+[node name="house" type="Node3D" parent="." unique_id=875525488]
+metadata/_edit_lock_ = true
+
+[node name="floor" parent="house" unique_id=1958611099 instance=ExtResource("1_t5f1w")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 1, 0)
+
+[node name="wall" parent="house" unique_id=967120767 instance=ExtResource("2_cwrfu")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 5, 7.5, 1, 0)
+
+[node name="wall2" parent="house" unique_id=449825502 instance=ExtResource("2_cwrfu")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 5, -7.5, 1, 0)
+
+[node name="wall3" parent="house" unique_id=1499828723 instance=ExtResource("2_cwrfu")]
+transform = Transform3D(-4.371139e-08, 0, 5, 0, 1.5, 0, -1, 0, -2.1855695e-07, 0, 1, 7.5)
+
+[node name="wall4" parent="house" unique_id=420771037 instance=ExtResource("2_cwrfu")]
+transform = Transform3D(-4.371139e-08, 0, 5, 0, 1.5, 0, -1, 0, -2.1855695e-07, 0, 1, -7.5)
+
+[node name="floor2" parent="house" unique_id=347825424 instance=ExtResource("1_t5f1w")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 5.376, 0)
+
+[node name="wall5" parent="house" unique_id=1526162981 instance=ExtResource("2_cwrfu")]
+transform = Transform3D(-4.371139e-08, 0, 2.5, 0, 1.5, 0, -1, 0, -1.09278474e-07, 3.75, 1, 0)
+
+[node name="lights" type="Node3D" parent="." unique_id=1307331588]
+metadata/_edit_lock_ = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lights" unique_id=1047009927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.25, -4)
+light_energy = 4.0
+omni_range = 4096.0
+metadata/_edit_lock_ = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="lights" unique_id=432148515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.25, 4)
+light_energy = 4.0
+omni_range = 4096.0
+metadata/_edit_lock_ = true
+
+[node name="someFurniture" type="Node3D" parent="." unique_id=1739029356]
+metadata/_edit_lock_ = true
+
+[node name="counters" type="Node3D" parent="someFurniture" unique_id=311840605]
+
+[node name="Counter" parent="someFurniture/counters" unique_id=2097652705 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.924947, 1.126, -0.565)
+
+[node name="Counter2" parent="someFurniture/counters" unique_id=186457528 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.933, 1.126, -0.565)
+
+[node name="Counter3" parent="someFurniture/counters" unique_id=1989684592 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.933, 1.126, -0.565)
+
+[node name="Counter4" parent="someFurniture/counters" unique_id=1989434939 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.933, 1.126, -0.565)
+
+[node name="Counter5" parent="someFurniture/counters" unique_id=134634018 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.933, 1.126, -0.565)
+
+[node name="Counter6" parent="someFurniture/counters" unique_id=1934894900 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.933, 1.126, -0.565)
+
+[node name="counters2" type="Node3D" parent="someFurniture" unique_id=195546432]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.860618, 0, -7.5030155)
+
+[node name="Counter" parent="someFurniture/counters2" unique_id=1516039706 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.924947, 1.126, -0.565)
+
+[node name="Counter2" parent="someFurniture/counters2" unique_id=732862054 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.933, 1.126, -0.565)
+
+[node name="Counter3" parent="someFurniture/counters2" unique_id=790028704 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.933, 1.126, -0.565)
+
+[node name="Counter4" parent="someFurniture/counters2" unique_id=45493805 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.933, 1.126, -0.565)
+
+[node name="Counter5" parent="someFurniture/counters2" unique_id=2087709684 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.933, 1.126, -0.565)
+
+[node name="Counter6" parent="someFurniture/counters2" unique_id=1646129302 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.933, 1.126, -0.565)
+
+[node name="counters3" type="Node3D" parent="someFurniture" unique_id=516035162]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.492, 0, 0.21)
+
+[node name="Counter2" parent="someFurniture/counters3" unique_id=626512005 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.933, 1.126, -0.565)
+
+[node name="Counter3" parent="someFurniture/counters3" unique_id=96515800 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.933, 1.126, -0.565)
+
+[node name="Counter5" parent="someFurniture/counters3" unique_id=1700785902 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.933, 1.126, -0.565)
+
+[node name="Counter6" parent="someFurniture/counters3" unique_id=121150998 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.933, 1.126, -0.565)
+
+[node name="Counter" parent="someFurniture/counters3" unique_id=713242380 instance=ExtResource("4_stnlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.933, 1.126, -0.565)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1510673726]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -4.25, 4.327, 3.7)
+fov = 70.0
+
+[node name="someFurniture2" type="Node3D" parent="." unique_id=479066385]
+metadata/_edit_lock_ = true
+
+[node name="Tv" parent="someFurniture2" unique_id=1357076714 instance=ExtResource("5_m6mrf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.181, 3, 3.7)
+
+[node name="Couch" parent="someFurniture2" unique_id=1824076123 instance=ExtResource("6_p6fjh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 1.126, 3.7)
+metadata/_edit_lock_ = true
+
+[node name="counters" type="Node3D" parent="someFurniture2" unique_id=383730318]
+
+[node name="Counter" parent="someFurniture2/counters" unique_id=481048081 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.924947, 1.126, -0.565)
+
+[node name="Counter2" parent="someFurniture2/counters" unique_id=616960368 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.933, 1.126, -0.565)
+
+[node name="Counter3" parent="someFurniture2/counters" unique_id=1330092054 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.933, 1.126, -0.565)
+
+[node name="Counter4" parent="someFurniture2/counters" unique_id=910630448 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.933, 1.126, -0.565)
+
+[node name="Counter5" parent="someFurniture2/counters" unique_id=1628483745 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.933, 1.126, -0.565)
+
+[node name="Counter6" parent="someFurniture2/counters" unique_id=818399816 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.933, 1.126, -0.565)
+
+[node name="counters2" type="Node3D" parent="someFurniture2" unique_id=1216965582]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.860618, 0, -7.5030155)
+
+[node name="Counter" parent="someFurniture2/counters2" unique_id=44886321 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.924947, 1.126, -0.565)
+
+[node name="Counter2" parent="someFurniture2/counters2" unique_id=1418406553 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.933, 1.126, -0.565)
+
+[node name="Counter3" parent="someFurniture2/counters2" unique_id=125570398 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.933, 1.126, -0.565)
+
+[node name="Counter4" parent="someFurniture2/counters2" unique_id=1927593856 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.933, 1.126, -0.565)
+
+[node name="Counter5" parent="someFurniture2/counters2" unique_id=1267675955 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.933, 1.126, -0.565)
+
+[node name="Counter6" parent="someFurniture2/counters2" unique_id=142833524 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.933, 1.126, -0.565)
+
+[node name="counters3" type="Node3D" parent="someFurniture2" unique_id=2009320807]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.492, 0, 0.21)
+
+[node name="Counter2" parent="someFurniture2/counters3" unique_id=828773030 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.933, 1.126, -0.565)
+
+[node name="Counter3" parent="someFurniture2/counters3" unique_id=52993499 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.933, 1.126, -0.565)
+
+[node name="Counter5" parent="someFurniture2/counters3" unique_id=360210803 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.933, 1.126, -0.565)
+
+[node name="Counter6" parent="someFurniture2/counters3" unique_id=330758375 instance=ExtResource("3_b1510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.933, 1.126, -0.565)
+
+[node name="Counter" parent="someFurniture2/counters3" unique_id=1237647104 instance=ExtResource("4_stnlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.933, 1.126, -0.565)
+
+[node name="chair" parent="someFurniture2" unique_id=1955073457 instance=ExtResource("7_lweks")]
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, -4.253, 1.125, 5.4)
+
+[node name="chair2" parent="someFurniture2" unique_id=450695096 instance=ExtResource("7_lweks")]
+transform = Transform3D(-0.625, 0, -9.4372375e-08, 0, 0.625, 0, 9.4372375e-08, 0, -0.625, -4.253, 1.125, 2)
+
+[node name="chair3" parent="someFurniture2" unique_id=917617243 instance=ExtResource("7_lweks")]
+transform = Transform3D(-2.7319619e-08, 0, 0.625, 0, 0.625, 0, -0.625, 0, -2.7319619e-08, -3.1, 1.125, 3.7)
+
+[node name="chair4" parent="someFurniture2" unique_id=593725514 instance=ExtResource("7_lweks")]
+transform = Transform3D(-2.7319619e-08, 0, -0.625, 0, 0.625, 0, 0.625, 0, -2.7319619e-08, -5.4, 1.125, 3.7)
+
+[node name="livingroomTable" parent="." unique_id=1307802624 instance=ExtResource("8_6ha2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7, 1.125, 3.7)
+
+[node name="livingroomtabledirt" type="Sprite3D" parent="livingroomTable" unique_id=354366499]
+transform = Transform3D(-1.704744e-08, 0.45, -1.704744e-08, 0, -1.9670125e-08, -0.39, -0.39, -1.9670125e-08, 7.451673e-16, -0.09831381, 1.250469, 0)
+texture = ExtResource("9_cj4jb")
+
+[node name="diningroomTable" parent="." unique_id=590893542 instance=ExtResource("10_dosby")]
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, -4.25, 1.125, 3.7)
+
+[node name="diningroomtabledirt" type="Sprite3D" parent="diningroomTable" unique_id=456157762]
+transform = Transform3D(-2.4041265e-08, -0.65000004, 1.704744e-08, 0, -2.8412401e-08, -0.39, 0.55, -2.8412401e-08, 7.4516723e-16, 0.1286025, 2.5016007, 0)
+texture = ExtResource("9_cj4jb")
+
+[node name="duster" type="AnimatedSprite2D" parent="." unique_id=1788089703]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_stnlf")
+animation = &"dusting"
+
+[node name="dustingSound" type="AudioStreamPlayer2D" parent="duster" unique_id=2027721617]
+stream = ExtResource("13_stnlf")
+volume_db = 10.0
+
+[node name="dustingTimer" type="Timer" parent="duster" unique_id=1338804389]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="duster/dustingTimer" to="." method="_on_dusting_timer_timeout"]

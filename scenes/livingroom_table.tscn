@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dwug8senahtnf"]
+
+[ext_resource type="PackedScene" uid="uid://dqktst8w12ytd" path="res://assets/models/livingroom_table.gltf" id="1_4uoqr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3e0k0"]
+size = Vector3(1.875, 1.25, 3)
+
+[node name="livingroomTable" type="StaticBody3D" unique_id=1307802624]
+
+[node name="blockbench_export" parent="." unique_id=778751850 instance=ExtResource("1_4uoqr")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=384967375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, 0)
+shape = SubResource("BoxShape3D_3e0k0")

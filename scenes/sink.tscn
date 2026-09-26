@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://f7vhjllhiwtq"]
+
+[ext_resource type="PackedScene" uid="uid://fmr5nq05da8v" path="res://assets/models/sink.gltf" id="1_6vnpx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8e5hq"]
+
+[node name="Counter" type="StaticBody3D" unique_id=2097652705]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=257872917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_8e5hq")
+
+[node name="blockbench_export" parent="." unique_id=916882795 instance=ExtResource("1_6vnpx")]

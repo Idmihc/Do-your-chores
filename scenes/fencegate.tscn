@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dyqjk40v5evaj"]
+
+[ext_resource type="PackedScene" uid="uid://ipxxmo8k76r5" path="res://assets/models/fencegate.gltf" id="1_jbvjr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4tlro"]
+size = Vector3(3, 3, 0.125)
+
+[node name="fencegate" type="StaticBody3D" unique_id=2055748841]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=950779887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_4tlro")
+
+[node name="blockbench_export" parent="." unique_id=261474603 instance=ExtResource("1_jbvjr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.438)

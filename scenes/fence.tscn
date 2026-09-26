@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bnopoajt2xmca"]
+
+[ext_resource type="PackedScene" uid="uid://bn2r5l1ul01bw" path="res://assets/models/fence.gltf" id="1_tphf0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4tlro"]
+size = Vector3(3, 3, 0.125)
+
+[node name="fence" type="StaticBody3D" unique_id=2055748841]
+
+[node name="blockbench_export" parent="." unique_id=858255951 instance=ExtResource("1_tphf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.438)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=950779887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_4tlro")

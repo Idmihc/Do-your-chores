@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bel674nkgm4ig"]
+
+[ext_resource type="Script" uid="uid://b5i7euqdukis2" path="res://scripts/microwave.gd" id="1_h1mfc"]
+[ext_resource type="PackedScene" uid="uid://ldnrmt82j45t" path="res://assets/models/microwave.gltf" id="1_qkcqp"]
+[ext_resource type="Animation" uid="uid://bkpcfebi8bt4g" path="res://assets/models/microwave_close.res" id="2_270ka"]
+[ext_resource type="Animation" uid="uid://6m8tmmw8ks7m" path="res://assets/models/microwave_open.res" id="3_h1mfc"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bq2ef"]
+_data = {
+&"microwave_close": ExtResource("2_270ka"),
+&"microwave_open": ExtResource("3_h1mfc")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3e0k0"]
+size = Vector3(0.875, 0.5, 0.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jnwgv"]
+size = Vector3(0.875, 0.5, 0.75)
+
+[node name="microwave" type="StaticBody3D" unique_id=44131249]
+script = ExtResource("1_h1mfc")
+
+[node name="blockbench_export" parent="." unique_id=1308004262 instance=ExtResource("1_qkcqp")]
+
+[node name="microwavedoor" type="AnimationPlayer" parent="blockbench_export" unique_id=862301164]
+libraries/ = SubResource("AnimationLibrary_bq2ef")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=244831801]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_3e0k0")
+
+[node name="microwaveArea3D" type="Area3D" parent="." unique_id=810225396]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="microwaveArea3D" unique_id=1289600077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_jnwgv")
+debug_color = Color(0.7774925, 0.43525004, 0.16984603, 0.41960785)
+
+[node name="openTimer" type="Timer" parent="." unique_id=31103087]
+wait_time = 0.6
+one_shot = true
+
+[node name="closeTimer" type="Timer" parent="." unique_id=2257311]
+one_shot = true
+
+[connection signal="area_entered" from="microwaveArea3D" to="." method="_on_microwave_area_3d_area_entered"]
+[connection signal="area_exited" from="microwaveArea3D" to="." method="_on_microwave_area_3d_area_exited"]
+[connection signal="timeout" from="openTimer" to="." method="_on_open_timer_timeout"]
+[connection signal="timeout" from="closeTimer" to="." method="_on_close_timer_timeout"]

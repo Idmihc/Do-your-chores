@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://b7todk0jcic0r"]
+
+[ext_resource type="Script" uid="uid://ey21yspj111" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://cvnti85qsjx6o" path="res://assets/trashbag.png" id="2_g2els"]
+[ext_resource type="PackedScene" uid="uid://dfgpguo0vvvce" path="res://scenes/frozenchicken.tscn" id="3_qhqgy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3e0k0"]
+height = 2.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g2els"]
+size = Vector3(0.01, 0.5, 3)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3vyb7"]
+load_path = "res://.godot/imported/crosshair.png-7a5ee98d03b748045923e3a0fa977b20.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_g2els")
+region = Rect2(599, 0, 599, 599)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3e0k0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="Player" type="CharacterBody3D" unique_id=64570562]
+script = ExtResource("1_3vyb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1083228487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_3e0k0")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1855072167]
+transform = Transform3D(-1, 2.6220146e-08, -1.4870182e-07, 0, 0.98480767, 0.17364818, 1.509958e-07, 0.17364818, -0.98480767, 0, 2, 0)
+fov = 90.0
+
+[node name="playerArea" type="Area3D" parent="Camera3D" unique_id=1324337917]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.2239188e-07, -1, -1.4)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/playerArea" unique_id=1174676261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.5083008)
+shape = SubResource("BoxShape3D_g2els")
+debug_color = Color(0.8160752, 0.40715557, 5.7756904e-07, 0.41960785)
+
+[node name="frozenchicken" parent="Camera3D" unique_id=1347771096 instance=ExtResource("3_qhqgy")]
+transform = Transform3D(-0.04796368, 0.090758495, 0.48934898, 0.20723963, 0.45061043, -0.06326105, -0.4524944, 0.19675657, -0.080843456, 2.6547292e-07, -0.23613632, -1.8269069)
+visible = false
+
+[node name="crosshair" type="CanvasLayer" parent="." unique_id=1685098818]
+
+[node name="crosshair" type="Sprite2D" parent="crosshair" unique_id=1586331221]
+position = Vector2(960, 540)
+scale = Vector2(2, 2)
+texture = SubResource("CompressedTexture2D_3vyb7")
+
+[node name="trashbag" type="AnimatedSprite2D" parent="crosshair" unique_id=798945052]
+visible = false
+z_index = 4
+position = Vector2(960, 750)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_3e0k0")

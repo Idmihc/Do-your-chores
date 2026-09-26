@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c2nc4fl7s1gcx"]
+
+[ext_resource type="Script" uid="uid://c1xitu6iwss4d" path="res://scripts/endscreen.gd" id="1_w4j3t"]
+[ext_resource type="Texture2D" uid="uid://blibgpojku3bq" path="res://assets/blackground.png" id="2_nlte8"]
+
+[node name="youLose" type="Node3D" unique_id=981136497]
+script = ExtResource("1_w4j3t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1621077716]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=858509367]
+position = Vector2(949, 546)
+texture = ExtResource("2_nlte8")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=595897098]
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_font_sizes/font_size = 380
+text = "You Lose!"
+horizontal_alignment = 1
+vertical_alignment = 1

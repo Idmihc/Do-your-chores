@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dar3uyuo5g8us"]
+
+[ext_resource type="PackedScene" uid="uid://dx0h5xdimmqcq" path="res://assets/models/fridge.gltf" id="1_buvrw"]
+[ext_resource type="Script" uid="uid://dbxv212m3ylik" path="res://scripts/fridge.gd" id="1_husjh"]
+[ext_resource type="Animation" uid="uid://fgqihjp5mhr3" path="res://assets/models/fridge_close.res" id="2_husjh"]
+[ext_resource type="Animation" uid="uid://bhyl3igexj6q8" path="res://assets/models/fridge_open.res" id="3_c4248"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_buvrw"]
+_data = {
+&"fridge_close": ExtResource("2_husjh"),
+&"fridge_open": ExtResource("3_c4248")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3e0k0"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jnwgv"]
+size = Vector3(1, 2, 1)
+
+[node name="fridge" type="StaticBody3D" unique_id=78495817]
+script = ExtResource("1_husjh")
+
+[node name="blockbench_export" parent="." unique_id=1263993525 instance=ExtResource("1_buvrw")]
+
+[node name="fridgeDoor" type="AnimationPlayer" parent="blockbench_export" unique_id=1616808401]
+libraries/ = SubResource("AnimationLibrary_buvrw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=451106248]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_3e0k0")
+
+[node name="fridgeArea" type="Area3D" parent="." unique_id=1998603702]
+collision_layer = 4
+collision_mask = 4
+
+[node name="fridgeAreaShape3D" type="CollisionShape3D" parent="fridgeArea" unique_id=1921024667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_jnwgv")
+debug_color = Color(0.9303295, 0.21936026, 0.38417834, 0.41960785)
+
+[node name="cutsceneTimer" type="Timer" parent="." unique_id=1380198626]
+one_shot = true
+
+[node name="closedoorTimer" type="Timer" parent="." unique_id=564505516]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="area_entered" from="fridgeArea" to="." method="_on_fridge_area_area_entered"]
+[connection signal="area_exited" from="fridgeArea" to="." method="_on_fridge_area_area_exited"]
+[connection signal="timeout" from="cutsceneTimer" to="." method="_on_cutscene_timer_timeout"]
+[connection signal="timeout" from="closedoorTimer" to="." method="_on_closedoor_timer_timeout"]

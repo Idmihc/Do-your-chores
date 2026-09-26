@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bsswld7svuxc8"]
+
+[ext_resource type="PackedScene" uid="uid://bmsedgkglif3m" path="res://assets/models/tv.gltf" id="1_nqyhj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3e0k0"]
+size = Vector3(3, 2, 0.313)
+
+[node name="Tv" type="StaticBody3D" unique_id=1357076714]
+
+[node name="blockbench_export" parent="." unique_id=408037225 instance=ExtResource("1_nqyhj")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=365570630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.095)
+shape = SubResource("BoxShape3D_3e0k0")

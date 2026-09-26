@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ds3dcebliv5m1"]
+
+[ext_resource type="PackedScene" uid="uid://gnsoq5u6e2r8" path="res://assets/models/diningroom_table.gltf" id="1_8ephb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3e0k0"]
+size = Vector3(2.75, 2.5, 4.25)
+
+[node name="diningroomTable" type="StaticBody3D" unique_id=1307802624]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=384967375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("BoxShape3D_3e0k0")
+
+[node name="blockbench_export" parent="." unique_id=1163731253 instance=ExtResource("1_8ephb")]

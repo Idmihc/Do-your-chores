@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://bomdnb4nfnwko"]
+
+[ext_resource type="PackedScene" uid="uid://dis50focuw4oi" path="res://assets/models/door.gltf" id="1_hpvv5"]
+[ext_resource type="Script" uid="uid://cy24oiekgf8nx" path="res://scripts/door.gd" id="1_uvdjg"]
+[ext_resource type="AudioStream" uid="uid://frtk4nf0fgl8" path="res://assets/kickingDoor.ogg" id="3_83dcw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3e0k0"]
+size = Vector3(1.875, 3, 0.125)
+
+[sub_resource type="Animation" id="Animation_uvdjg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_83dcw"]
+resource_name = "closed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 2.3561945, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_la1wf"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.3561945, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_18pbm"]
+resource_name = "open_fast"
+length = 0.13333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.3561945, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_18pbm"]
+_data = {
+&"RESET": SubResource("Animation_uvdjg"),
+&"closed": SubResource("Animation_83dcw"),
+&"open": SubResource("Animation_la1wf"),
+&"open_fast": SubResource("Animation_18pbm")
+}
+
+[node name="door" type="Node3D" unique_id=893966782]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+script = ExtResource("1_uvdjg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2023610704]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1701153335]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0.9379999, 1.5, 0)
+shape = SubResource("BoxShape3D_3e0k0")
+debug_color = Color(0.8035781, 0.38618892, 0.43343374, 0.41960785)
+
+[node name="blockbench_export" parent="StaticBody3D" unique_id=1331682871 instance=ExtResource("1_hpvv5")]
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 0.938, 0, -0.125)
+
+[node name="doorMove" type="AnimationPlayer" parent="." unique_id=1724102358]
+libraries/ = SubResource("AnimationLibrary_18pbm")
+
+[node name="kick" type="AudioStreamPlayer3D" parent="." unique_id=1732237157]
+stream = ExtResource("3_83dcw")

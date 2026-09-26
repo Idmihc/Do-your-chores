@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://p5340cxtxk1g"]
+
+[ext_resource type="PackedScene" uid="uid://bajvcs00thyty" path="res://assets/models/couch.gltf" id="1_r84cs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3e0k0"]
+size = Vector3(4, 2, 1.75)
+
+[node name="Couch" type="StaticBody3D" unique_id=1824076123]
+
+[node name="blockbench_export" parent="." unique_id=1432589395 instance=ExtResource("1_r84cs")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1857854593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.063)
+shape = SubResource("BoxShape3D_3e0k0")

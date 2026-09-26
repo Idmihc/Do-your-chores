@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cb4qx6tn6rlng"]
+
+[ext_resource type="Script" uid="uid://1ug4ysydsjhw" path="res://scripts/global.gd" id="1_4pk28"]
+[ext_resource type="Texture2D" uid="uid://ctio52vwa1lgf" path="res://assets/pauseoverlay.png" id="2_nmxvb"]
+[ext_resource type="AudioStream" uid="uid://cu7h2pbw6isbp" path="res://assets/Chee Zee Lab.mp3" id="3_opebo"]
+[ext_resource type="AudioStream" uid="uid://dkmteeui4v0n6" path="res://assets/microwave.mp3" id="4_m3l3d"]
+
+[node name="Global" type="Node" unique_id=980349157]
+process_mode = 3
+script = ExtResource("1_4pk28")
+
+[node name="pauseOverlay" type="CanvasLayer" parent="." unique_id=2141394502]
+process_priority = 4
+layer = 5
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="pauseOverlay" unique_id=2092203458]
+z_index = 20
+position = Vector2(949, 528)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_nmxvb")
+
+[node name="doomTimer" type="Timer" parent="." unique_id=461474049]
+process_mode = 1
+wait_time = 300.0
+one_shot = true
+
+[node name="minuteUpdate" type="Timer" parent="." unique_id=606522603]
+process_mode = 1
+wait_time = 1.5
+one_shot = true
+
+[node name="gameplaySong" type="AudioStreamPlayer" parent="." unique_id=989158058]
+process_mode = 1
+stream = ExtResource("3_opebo")
+volume_db = -5.0
+
+[node name="microwaveTimer" type="Timer" parent="." unique_id=652209042]
+process_mode = 1
+wait_time = 121.0
+one_shot = true
+
+[node name="microwavesounds" type="AudioStreamPlayer3D" parent="." unique_id=919398143]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43, 2.18, -0.534)
+stream = ExtResource("4_m3l3d")
+volume_db = -10.0
+
+[connection signal="timeout" from="doomTimer" to="." method="_on_doom_timer_timeout"]
+[connection signal="timeout" from="minuteUpdate" to="." method="_on_minute_update_timeout"]
+[connection signal="timeout" from="microwaveTimer" to="." method="_on_microwave_timer_timeout"]

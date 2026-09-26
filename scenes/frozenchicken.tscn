@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dfgpguo0vvvce"]
+
+[ext_resource type="PackedScene" uid="uid://ejofnl47ycxe" path="res://assets/models/frozenchicken.gltf" id="1_nivk0"]
+
+[node name="blockbench_export" unique_id=1347771096 instance=ExtResource("1_nivk0")]
+
+[node name="mesh" parent="chicken" parent_id_path=PackedInt32Array(1495217251) index="0" unique_id=445413596]
+cast_shadow = 0
+
+[node name="mesh2" parent="chicken/wing1" parent_id_path=PackedInt32Array(653516266) index="0" unique_id=503368476]
+cast_shadow = 0
+
+[node name="mesh3" parent="chicken/wing1" parent_id_path=PackedInt32Array(653516266) index="1" unique_id=1538429797]
+cast_shadow = 0
+
+[node name="mesh4" parent="chicken/wing1" parent_id_path=PackedInt32Array(653516266) index="2" unique_id=417155562]
+cast_shadow = 0
+
+[node name="mesh5" parent="chicken/wing1" parent_id_path=PackedInt32Array(653516266) index="3" unique_id=51713395]
+cast_shadow = 0
+
+[node name="mesh6" parent="chicken/wing2" parent_id_path=PackedInt32Array(735116634) index="0" unique_id=2009222968]
+cast_shadow = 0
+
+[node name="mesh7" parent="chicken/wing2" parent_id_path=PackedInt32Array(735116634) index="1" unique_id=1595044249]
+cast_shadow = 0
+
+[node name="mesh8" parent="chicken/wing2" parent_id_path=PackedInt32Array(735116634) index="2" unique_id=2004617615]
+cast_shadow = 0
+
+[node name="mesh9" parent="chicken/wing2" parent_id_path=PackedInt32Array(735116634) index="3" unique_id=980986718]
+cast_shadow = 0
+
+[node name="ice" parent="." index="1" unique_id=1119841008]
+transparency = 0.59
+cast_shadow = 0
