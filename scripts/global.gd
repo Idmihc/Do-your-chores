@@ -20,6 +20,8 @@ var hasCleanedDining:bool = false
 var playerPos:Vector3 = Vector3(-1.0, 2.5, 0.0)
 var playerRot:int = 0
 var earlyEnd:bool = false
+var timeRecorded:bool = false
+var timeTaken:float = 0.0
 @onready var pause_overlay: CanvasLayer = $pauseOverlay
 @onready var doom_timer: Timer = $doomTimer
 @onready var minute_update: Timer = $minuteUpdate
@@ -53,6 +55,9 @@ func _process(delta: float) -> void:
 			can_update_mins = false
 			minute_update.start()
 	
+	if (tasksCompleted == 5) and (timeRecorded == false):
+		timeTaken = doom_timer.time_left
+		timeRecorded = true
 	if (earlyEnd == false) and (doom_timer.time_left > 10) and (tasksCompleted == 5):
 		earlyEnd = true
 		get_tree().change_scene_to_file("res://scenes/limbo.tscn")

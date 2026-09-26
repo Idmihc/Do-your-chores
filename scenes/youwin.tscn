@@ -19,3 +19,11 @@ theme_override_font_sizes/font_size = 380
 text = "You Win!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1794906578]
+offset_top = 220.0
+offset_right = 1920.0
+offset_bottom = 1300.0
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
