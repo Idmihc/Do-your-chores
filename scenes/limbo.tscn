@@ -12,6 +12,16 @@ script = ExtResource("1_rdic8")
 position = Vector2(949, 546)
 texture = ExtResource("1_vawkx")
 
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=100154631]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_font_sizes/font_size = 380
+text = "Some time later"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Timer" type="Timer" parent="." unique_id=1829481839]
 wait_time = 5.0
 one_shot = true
