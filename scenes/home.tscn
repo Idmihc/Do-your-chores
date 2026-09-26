@@ -414,7 +414,7 @@ shape = SubResource("BoxShape3D_g35bm")
 debug_color = Color(0.9001606, 0.29320502, 0.28870043, 0.41960785)
 
 [node name="fridge" parent="." unique_id=78495817 instance=ExtResource("7_vc333")]
-transform = Transform3D(1.45, 0, 0, 0, 1.45, 0, 0, 0, 1.45, 0.72376746, 1.125, -0.78467774)
+transform = Transform3D(1.45, 0, 0, 0, 1.45, 0, 0, 0, 1.45, -1.4145625, 1.125, -0.78467774)
 
 [node name="microwave" parent="." unique_id=44131249 instance=ExtResource("10_cmjdo")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 2.4297745, 2.179755, -0.5340282)
