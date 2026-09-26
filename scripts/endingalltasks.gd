@@ -18,6 +18,7 @@ func _ready() -> void:
 func  _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		if mother_dialogue.text == "You completed all your chores.":
+			mother.play("happy")
 			mother_dialogue.text = "Good job!"
 		elif mother_dialogue.text == "Good job!":
 			get_tree().change_scene_to_file("res://scenes/youwin.tscn")
