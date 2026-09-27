@@ -34,6 +34,7 @@ one_shot = true
 process_mode = 1
 stream = ExtResource("3_opebo")
 volume_db = -5.0
+parameters/looping = true
 
 [node name="microwaveTimer" type="Timer" parent="." unique_id=652209042]
 process_mode = 1

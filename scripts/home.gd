@@ -86,7 +86,7 @@ func _process(delta: float) -> void:
 			greentrashopen.visible = false
 			dispose_trash.play()
 		elif (aimed_at_plates == true) and (Global.holdingTrashbag == false) and (Global.hasDonePlates == false):
-			get_tree().change_scene_to_file("res://scenes/washingdishes.tscn")
+			get_tree().change_scene_to_file("res://scenes/washingdishestest.tscn")
 	
 	if Input.is_action_just_pressed("show"):
 		if task_list.visible == true:

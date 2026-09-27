@@ -75,4 +75,5 @@ func _on_microwave_timer_timeout() -> void:
 	tasksCompleted +=1
 
 func _on_doom_timer_timeout() -> void:
+	gameplay_song.stop()
 	get_tree().change_scene_to_file("res://scenes/limbo.tscn")
