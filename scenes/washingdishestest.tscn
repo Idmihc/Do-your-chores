@@ -359,7 +359,7 @@ z_index = 5
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_bka8s")
 animation = &"scrubbing"
-frame_progress = 0.31166756
+frame_progress = 0.9012181
 
 [node name="scrubbingSound" type="AudioStreamPlayer3D" parent="spongeNode/sponge" unique_id=968672045]
 stream = ExtResource("9_hp8w5")

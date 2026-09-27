@@ -26,7 +26,11 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("interact"):
 		sponge.play("scrubbing")
 		bubbles.emitting = true
-		
+		if canScrubSound == true:
+			canScrubSound = false
+			scrubbing_sound.pitch_scale = randf_range(0.75,1.25)
+			scrubbing_sound.play()
+			scrubbing_timer.start()
 	else:
 		sponge.play("idle")
 		bubbles.emitting = false
