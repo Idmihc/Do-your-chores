@@ -352,14 +352,14 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 50
 
-[node name="spongeNode" type="Node3D" parent="." unique_id=647828099]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.619498, 2.507453, -3.4514427)
+[node name="spongeNode" type="Node2D" parent="." unique_id=507268247]
 
-[node name="sponge" type="AnimatedSprite3D" parent="spongeNode" unique_id=1077478189]
-transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+[node name="sponge" type="AnimatedSprite2D" parent="spongeNode" unique_id=431888448]
+z_index = 5
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_bka8s")
 animation = &"scrubbing"
-frame_progress = 0.07298302
+frame_progress = 0.9012181
 
 [node name="scrubbingSound" type="AudioStreamPlayer3D" parent="spongeNode/sponge" unique_id=968672045]
 stream = ExtResource("9_hp8w5")
