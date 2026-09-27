@@ -7,8 +7,7 @@ var canScrubSound:bool = true
 var waterPlaying:bool = false
 var mousePos:Vector2 = Vector2(0.0,0.0)
 @onready var spongeNode: Node2D = $spongeNode
-@onready var scrubbing_sound: AudioStreamPlayer3D = $sponge/scrubbingSound
-@onready var scrubbing_timer: Timer = $sponge/scrubbingTimer
+@onready var scrubbing_sound: AudioStreamPlayer3D = $scrubbingSound
 @onready var sponge: AnimatedSprite2D = $spongeNode/sponge
 @onready var bubbles: GPUParticles2D = $spongeNode/bubbles
 @onready var water: AudioStreamPlayer3D = $water
@@ -26,11 +25,9 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("interact"):
 		sponge.play("scrubbing")
 		bubbles.emitting = true
-		if canScrubSound == true:
-			canScrubSound = false
+		if scrubbing_sound.playing == false:
 			scrubbing_sound.pitch_scale = randf_range(0.75,1.25)
 			scrubbing_sound.play()
-			scrubbing_timer.start()
 	else:
 		sponge.play("idle")
 		bubbles.emitting = false
@@ -46,9 +43,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		mousePos = event.position
 		mouseDistance = event.relative.length()
-
-func _on_scrubbing_timer_timeout() -> void:
-	canScrubSound = true
 
 func _on_watertimer_timeout() -> void:
 	waterPlaying = false
