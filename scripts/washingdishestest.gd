@@ -19,15 +19,19 @@ func _ready() -> void:
 	Global.playerRot = 90
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
+#800 to 1100, 440 to 750
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	spongeNode.position = mousePos
 	if Input.is_action_pressed("interact"):
 		sponge.play("scrubbing")
-		bubbles.emitting = true
-		if scrubbing_sound.playing == false:
-			scrubbing_sound.pitch_scale = randf_range(0.75,1.25)
-			scrubbing_sound.play()
+		if (mousePos.x >= 800) and (mousePos.x <= 1100) and (mousePos.y >= 440) and (mousePos.y <= 750):
+			bubbles.emitting = true
+			if scrubbing_sound.playing == false:
+				scrubbing_sound.pitch_scale = randf_range(0.75,1.25)
+				scrubbing_sound.play()
+		else:
+			bubbles.emitting = false
 	else:
 		sponge.play("idle")
 		bubbles.emitting = false
