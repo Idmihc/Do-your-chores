@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="To do"
-run/main_scene="uid://dsbgaqfjeqmr1"
+run/main_scene="uid://c7hk7pd3tycd0"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -27,7 +27,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gitot/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
